@@ -26,4 +26,4 @@ async function listavideo(){
     listaApi.forEach(elemento => lista.appendChild(constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)));
 }
 
-listavideo()
+listavideo();
