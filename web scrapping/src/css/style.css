@@ -1,10 +1,4 @@
-.container-cafe{
-    width: 400px;
-    border: 1px solid blue;
-}
-
-.lista-cafe-da-manha{
-    display: flex;
-    justify-content:flex-end
-    /* border: 1px solid red; */
+body {
+    background-color: black;
+    color: white
 }

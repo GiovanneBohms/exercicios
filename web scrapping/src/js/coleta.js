@@ -1,16 +1,13 @@
-const xhr = new XMLHttpRequest();
+var num = 0;
+var obj = new String("0");
+var str = "0";
 
-xhr.open('GET', 'https://steamcommunity.com/market/itemordershistogram?country=BR&language=brazilian&currency=7&item_nameid=176366664');
-
-xhr.onload = function() {
-  if (xhr.status === 200) {
-    const data = JSON.parse(xhr.responseText);
-    console.log(data);
-  } else {
-    console.log('penis: ' + xhr.status);
-  }
-};
-xhr.send();
-xhr.onload()
-
-
+console.log(num === num); // true
+console.log(obj === obj); // true
+console.log(str === str); // true
+console.log(num === obj); // false
+console.log(num === str); // false
+console.log(obj === str); // false
+console.log(null === undefined); // false
+console.log(obj === null); // false
+console.log(obj === undefined); // false
