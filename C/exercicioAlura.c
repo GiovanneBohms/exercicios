@@ -1,10 +1,17 @@
 #include <stdio.h>
 
 main(){
-    int x,y,multiplicacao;
-
-    printf("digite dois numeros \n");
-    scanf("%d %d",&x, &y);
-    multiplicacao = x*y;
-    printf("a multiplicacao deu %d", multiplicacao);
+    int chute = 0;
+    int numerosecreto = 42;
+    int acertou = chute == numerosecreto;
+if(acertou) {
+    printf("Parabéns! Você acertou!\n");
+} else {
+    if(chute > numerosecreto) {
+        printf("Seu chute foi maior do que o número secreto!\n");
+    } 
+    if(chute < numerosecreto) {
+        printf("Seu chute foi menor do que o número secreto!\n");
+    }
+}
 }
