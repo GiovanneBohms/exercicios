@@ -1,31 +1,43 @@
 #include <stdio.h>
 
-#define NUMERO_DE_TENTATIVAS 5
 
 main() {
-    int numerosecreto = 42,chute;
+   
     
     printf("\n ********************************");
     printf("\n Bem vindo ao jogo de Adivinhacao");
     printf("\n ********************************");
-
-    for (int i = 1; i<=NUMERO_DE_TENTATIVAS;i++){
-
-        printf("\ntentativa %d de %d",i,NUMERO_DE_TENTATIVAS);
+    int numerosecreto = 42;
+    int chute;
+    int ganhou=0;
+    int tentativas = 1;
+    while (ganhou == 0){
+        
+        printf("\ntentativa %d",tentativas);
         printf("\n Digite um numero   ");
         scanf("%d", &chute);
-        int acertou = chute==numerosecreto;
 
-        if(acertou){
-            printf("Parabens! Voce acertou!");
-            break;
-        }else{
-            if(chute > numerosecreto){
-                printf("o numero secreto eh menor \n");
-            }else{
-                printf("o numero secreto eh maior");
-            } 
+        int acertou = chute==numerosecreto;
+        int maior = chute>numerosecreto;
+
+        if(chute < 0){
+            printf("o valor digitado eh negativo, digite um valor positivo");
+            continue;
         }
+
+        else if(acertou){
+            printf("Parabens! Voce acertou!");
+            ganhou = 1;
+        }
+        else if(maior){
+            printf("o numero secreto eh menor \n");
+        }
+        else{
+            printf("o numero secreto eh maior");
+        }
+        tentativas++;
     }
     printf("\nfim de jogo");
+    tentativas--;
+    printf("voce acertou na tentativa %d",tentativas);
 }
