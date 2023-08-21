@@ -7,8 +7,8 @@ main(){
     while(1){
         i++;
         SOMA_TOTAL = i+SOMA_TOTAL;
-
-        if(i==100){
+        printf("%d",i);
+        if(i==1000000000){
             printf("%d", SOMA_TOTAL);
             break;
         }
