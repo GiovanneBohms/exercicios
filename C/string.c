@@ -8,5 +8,6 @@ main(){
     int indexUm = array[0];
     printf("%d\n", testes);
     printf("%d\n",tamanho);
+    printf("Francisco eh um bom professor");
 
 }
