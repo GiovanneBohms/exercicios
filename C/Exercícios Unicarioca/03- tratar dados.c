@@ -5,7 +5,7 @@ main(){
     char codigoPeca1[50],codigoPeca2[50];
     int qntPeca1,qntPeca2;
 
-    printf("digite IPI em decimal exep: 0.10 \n");
+    printf("digite IPI: EXP digite 10 se for 10%% \n");
     scanf("%f",&IPI);
     printf("Digite o nome ou codigo da primeira peca: \n");
     scanf("%s", &codigoPeca1);
@@ -26,6 +26,6 @@ main(){
     printf("Voce comprou:\n \n");
     printf("Item %s Preco %.2f Quantidade %d \n",codigoPeca1,valorPeca1, qntPeca1);
     printf("Item %s Preco %.2f Quantidade %d \n",codigoPeca2,valorPeca2, qntPeca2);
-    printf("Valor total foi de R$: %.2f \n",valorTotal);
+    printf("Valor total foi de R$: %.2f com o IPI de %.2f%%\n",valorTotal,IPI);
 
 }
