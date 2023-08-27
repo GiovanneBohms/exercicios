@@ -36,7 +36,7 @@ main() {
         }
         tentativas++;
     }
-    printf("\nfim de jogo");
+    printf("\nfim de jogo pera ai");
     
     printf("voce acertou na tentativa %d",tentativas);
 }
