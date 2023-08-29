@@ -2,6 +2,24 @@ function tamanhoGrade(){
     return 20;
 }
 
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.addEventListener("click", function(event) {
+  // Obtém as coordenadas do clique dentro do canvas
+  const mouseX = event.clientX
+  const mouseY = event.clientY
+
+  let coordenadas = {
+    'X':mouseX,
+    'Y':mouseY
+  } 
+  // Faça algo com as coordenadas do clique
+  console.log(`Y em ${mouseX} X em ${mouseY}`);
+
+});
+
+
 function desenhaPlataforma() {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
@@ -30,7 +48,7 @@ function desenhaPlataforma() {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
     const gridSize = tamanhoGrade();
-    ctx.strokeStyle = "blue"; // Cor da linha
+    ctx.strokeStyle = "black"; // Cor da linha
     ctx.lineWidth = 2; // Largura da linha
     ctx.beginPath();
     ctx.moveTo(startX*gridSize, y*gridSize);
@@ -42,7 +60,7 @@ function desenhaPlataforma() {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
     const gridSize = tamanhoGrade();
-    ctx.strokeStyle = "green"; // Cor da linha
+    ctx.strokeStyle = "black"; // Cor da linha
     ctx.lineWidth = 2; // Largura da linha
     ctx.beginPath();
     ctx.moveTo(x*gridSize, startY*gridSize);
@@ -54,7 +72,7 @@ function desenhaPlataforma() {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
     const gridSize = tamanhoGrade();
-    ctx.strokeStyle = "red"; // Cor da linha
+    ctx.strokeStyle = "black"; // Cor da linha
     ctx.lineWidth = 2;       // Largura da linha
     ctx.beginPath();
     ctx.moveTo(startX*gridSize, startY*gridSize);
@@ -63,20 +81,24 @@ function desenhaPlataforma() {
   }
 
 
-function desenhaCaixa3D(){
-    desenharLinhaHorizontal(0,1,3);    //(y,startX,endX)
-    desenharLinhaHorizontal(1,0,2);    //(y,startX,endX)
-    desenharLinhaHorizontal(2,0,2);    //(y,startX,endX)
-    
-    desenharLinhaDiagonal(0,1,1,0);//(startX,startY,endX,endY)
-    desenharLinhaDiagonal(2,2,3,1);//(startX,startY,endX,endY)
-    desenharLinhaDiagonal(2,1,3,0);//(startX,startY,endX,endY)
+  function desenhaCaixa3D(x, y) {
+    desenharLinhaHorizontal(y, x + 1, x + 3); // (y, startX, endX)
+    desenharLinhaHorizontal(y + 1, x, x + 2); // (y, startX, endX)
+    desenharLinhaHorizontal(y + 2, x, x + 2); // (y, startX, endX)
+    desenharLinhaDiagonal(x, y + 1, x + 1, y); // (startX, startY, endX, endY)
+    desenharLinhaDiagonal(x + 2, y + 2, x + 3, y + 1); // (startX, startY, endX, endY)
+    desenharLinhaDiagonal(x + 2, y + 1, x + 3, y); // (startX, startY, endX, endY)
+    desenharLinhaVertical(x, y + 1, y + 2); // (x, startY, endY)
+    desenharLinhaVertical(x + 2, y + 1, y + 2); // (x, startY, endY)
+    desenharLinhaVertical(x + 3, y, y + 1); // (x, startY, endY)
+  }
 
-    desenharLinhaVertical(0,1,2);   //(x,startY,endY)
-    desenharLinhaVertical(2,1,2);   //(x,startY,endY)
-    desenharLinhaVertical(3,0,1);   //(x,startY,endY)
-}
+    desenhaPlataforma();
 
-    // desenhaPlataforma();
-    desenhaCaixa3D()
+    desenhaCaixa3D(1,0)
+    desenhaCaixa3D(1,1)
+    desenhaCaixa3D(1,2)
+    desenhaCaixa3D(21,22)
+
+    addEventListener
   
