@@ -2,30 +2,58 @@ function tamanhoGrade(){
     return 20;
 }
 
+function tamanhoCanvas(){
+	return 480;
+}
+
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
 canvas.addEventListener("click", function(event) {
   // Obtém as coordenadas do clique dentro do canvas
-  const mouseX = event.clientX
-  const mouseY = event.clientY
+  const mouseX = event.offsetX
+  const mouseY = event.offsetY
 
   let coordenadas = {
     'X':mouseX,
     'Y':mouseY
   } 
   // Faça algo com as coordenadas do clique
+ 
   console.log(`Y em ${mouseX} X em ${mouseY}`);
+  
+  filtraCoordenada(mouseX,mouseY)
+  
 
 });
 
+function filtraCoordenada(x,y){
+	const tamanhoCubico =  20;
+	const xSaida = Math.trunc(x/tamanhoCubico);
+	const ySaida = Math.trunc(y/tamanhoCubico)-1;
+	desenhaCaixa3D(xSaida, ySaida);
+}
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function criaObjetos() {
+  for (let i = 0; i < 30; i++) {
+    await delay(500);
+    desenhaCaixa3D(i, i); // Certifique-se de que a função desenhaCaixa3D esteja definida e funcional
+  }
+}
+
+// Chame a função para iniciar o processo
+criaObjetos();
 
 function desenhaPlataforma() {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
   
     const gridSize = tamanhoGrade();
-    const canvasSize = 480;
+    const canvasSize = tamanhoCanvas();
   
     ctx.strokeStyle = "#C0C0C0	"; // Redefine a cor da linha para preto
     // Desenhar retas verticais
@@ -93,12 +121,8 @@ function desenhaPlataforma() {
     desenharLinhaVertical(x + 3, y, y + 1); // (x, startY, endY)
   }
 
+
     desenhaPlataforma();
 
-    desenhaCaixa3D(1,0)
-    desenhaCaixa3D(1,1)
-    desenhaCaixa3D(1,2)
-    desenhaCaixa3D(21,22)
 
-    addEventListener
   
