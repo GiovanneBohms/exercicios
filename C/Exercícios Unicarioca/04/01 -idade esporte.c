@@ -14,7 +14,7 @@ if(idade<5){
     printf("Categoria Juvenil A");
 }else if(idade <=17){
     printf("Categoria Juvenil B");
-}else{
+}else {
     printf("Categoria Adulto");
 }
 return 0;
