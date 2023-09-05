@@ -1,9 +1,11 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
     char caracteres[] = "0123456789abcdefghijklmnopqrstuvwxyz";
     char combinacao[5];
     combinacao[4] ='\0';
+    char senha[] = "deus";
     int num_caracteres = 36; // Número de caracteres possíveis (dígitos + letras minúsculas)
     
 
@@ -18,6 +20,10 @@ int main() {
                     combinacao[3]=caracteres[l];
 
                     printf("%s \n",combinacao);
+
+                    if(strcmp(senha,combinacao) == 0){
+                        printf("Senha encontrada");
+                    }
                 }
             }
         }
