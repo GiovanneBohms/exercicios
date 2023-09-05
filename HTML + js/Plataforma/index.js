@@ -111,15 +111,24 @@ function desenharLinhaDiagonal(startX,startY,endX,endY) {
 
 async function desenhaCaixa3D(x, y) {
 
-  const atraso=0;
+  const atraso=500;
+  await delay(atraso)
   desenharLinhaHorizontal(y, x + 1, x + 3); // (y, startX, endX)
+  await delay(atraso)
   desenharLinhaHorizontal(y + 1, x, x + 2); // (y, startX, endX)
+  await delay(atraso)
   desenharLinhaHorizontal(y + 2, x, x + 2); // (y, startX, endX)
+  await delay(atraso)
   desenharLinhaDiagonal(x, y + 1, x + 1, y); // (startX, startY, endX, endY)
+  await delay(atraso)
   desenharLinhaDiagonal(x + 2, y + 2, x + 3, y + 1); // (startX, startY, endX, endY)
+  await delay(atraso)
   desenharLinhaDiagonal(x + 2, y + 1, x + 3, y); // (startX, startY, endX, endY)
+  await delay(atraso)
   desenharLinhaVertical(x, y + 1, y + 2); // (x, startY, endY)
+  await delay(atraso)
   desenharLinhaVertical(x + 2, y + 1, y + 2); // (x, startY, endY)
+  await delay(atraso)
   desenharLinhaVertical(x + 3, y, y + 1); // (x, startY, endY)
 }
 
