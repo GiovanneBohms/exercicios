@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quadrado Isométrico em JavaScript</title>
+</head>
+<body>
+    <canvas id="isometricCanvas" width="400" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('isometricCanvas');
+        const context = canvas.getContext('2d');
+
+        // Função para desenhar um quadrado em uma posição isométrica
+        function drawIsometricSquare(x, y, size) {
+            // Configurar cor e espessura da linha
+            context.strokeStyle = 'black';
+            context.lineWidth = 2;
+
+            // Iniciar o desenho do quadrado
+            context.beginPath();
+
+            // Mover para o canto superior esquerdo do quadrado
+            context.moveTo(x, y - size);
+
+            // Desenhar os quatro lados do quadrado
+            context.lineTo(x + size, y);
+            context.lineTo(x, y + size);
+            context.lineTo(x - size, y);
+            context.lineTo(x, y - size);
+
+            // Finalizar o desenho
+            context.closePath();
+            context.stroke();
+        }
+
+        // Chamar a função para desenhar um quadrado isométrico
+        drawIsometricSquare(200, 200, 200); // Os valores representam a posição (x, y) e o tamanho do quadrado
+    </script>
+</body>
+</html>
