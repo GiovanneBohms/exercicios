@@ -3,7 +3,7 @@
 int main() {
     char caracteres[] = "0123456789abcdefghijklmnopqrstuvwxyz";
     char combinacao[5];
-    combinacao[5] ='\0';
+    combinacao[4] ='\0';
     int num_caracteres = 36; // Número de caracteres possíveis (dígitos + letras minúsculas)
     
 
