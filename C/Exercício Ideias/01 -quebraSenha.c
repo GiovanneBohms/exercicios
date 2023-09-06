@@ -31,7 +31,7 @@ int main() {
         }
     }
 
-    if (!senha_encontrada) {
+    if (senha_encontrada==0) {
         printf("Senha não encontrada.\n");
     }
 
