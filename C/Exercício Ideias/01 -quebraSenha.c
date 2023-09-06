@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main() {
-    char caracteres[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+    char caracteres[] = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     char combinacao[5],senha[5];
     combinacao[4] = '\0';
     int num_caracteres = strlen(caracteres),senha_encontrada = 0;
