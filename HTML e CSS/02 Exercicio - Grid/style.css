@@ -11,7 +11,6 @@ h1 {
   border: 1px solid #c8c8c8;
   padding: 20px;
   display: grid;
-  
 }
 
 h2 {
@@ -24,12 +23,11 @@ h2 {
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 4px;
-
 }
 
-.grid{
+.grid {
   display: grid;
-  grid-template-columns:300px 300px;
-  gap: 20px;
+  grid-template-columns: 300px 300px;
+  gap: 8px;
   justify-content: center;
 }
