@@ -3,15 +3,14 @@
   "name": "Hello Extensions",
   "content_scripts": [
     {
-      "matches": ["https://*.bbc.com/*"],
-      "css": ["styles.css"],
-      "js": ["content-script.js"]
+      "js": ["index.js"],
+      "matches": ["https://store.steampowered.com/*"]
     }
   ],
   "description": "Base Level Extension",
   "version": "1.0",
   "action": {
-    "default_popup": "./popup/popup.html",
+    "default_popup": "index.html",
     "default_icon": "./images/icon48.png"
   }
 }
