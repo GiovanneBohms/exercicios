@@ -4,8 +4,8 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 });
 
-const extensions = "https://developer.chrome.com/docs/extensions";
-const webstore = "https://developer.chrome.com/docs/webstore";
+const extensions = "https://steamcommunity.com/market/";
+const webstore = "https://twitter.com/";
 
 chrome.action.onClicked.addListener(async (tab) => {
   if (tab.url.startsWith(extensions) || tab.url.startsWith(webstore)) {
@@ -18,7 +18,8 @@ chrome.action.onClicked.addListener(async (tab) => {
     });
 
     if (nextState === "ON") {
-      await chrome.scripting.executeScript({
+      await chrome.scripting
+        .executeScript({
           target: { tabId: tab.id },
           files: ["pfizer.js"],
         })
