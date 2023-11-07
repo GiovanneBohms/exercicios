@@ -1,9 +1,18 @@
-var elementos = document.querySelectorAll(
-  ".css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"
-);
+function delay (tempo){
+  return new Promise (resolve =>{
+    setTimeout(resolve,tempo);
+  })
+}
 
-console.log("pfizer injetado no click");
-console.log(elementos);
-elementos.forEach((e) => {
-  console.log(e);
-});
+async function carregamento(){
+  console.log("inicio pfizer");
+
+  await delay(5000)
+  module1()
+  
+  console.log("fim  pfizer");
+}
+
+carregamento()
+
+
