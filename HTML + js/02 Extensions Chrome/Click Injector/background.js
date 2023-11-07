@@ -28,7 +28,7 @@ chrome.action.onClicked.addListener(async (tab) => {
       await chrome.scripting
         .executeScript({
           target: { tabId: tab.id },
-          files: ["module1.js","pfizer.js"],
+          files: ["./src/module1.js","./src/index.js" ],
         })
         .then(() => console.log("script injected"));
     } else if (nextState === "OFF") {
