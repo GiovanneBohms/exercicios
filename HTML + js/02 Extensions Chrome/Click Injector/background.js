@@ -4,7 +4,8 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 });
 
-const steamcommunity = "https://steamcommunity.com/market/";
+const mozilla = "https://developer.mozilla.org/";
+const steamcommunity = "https://steamcommunity.com/";
 const steampowered = "https://store.steampowered.com/";
 const twitter = "https://twitter.com/";
 const github = "https://github.com/";
@@ -14,7 +15,8 @@ chrome.action.onClicked.addListener(async (tab) => {
     tab.url.startsWith(steamcommunity) ||
     tab.url.startsWith(twitter) ||
     tab.url.startsWith(github) ||
-    tab.url.startsWith(steampowered)
+    tab.url.startsWith(steampowered) ||
+    tab.url.startsWith(mozilla)
   ) {
     const prevState = await chrome.action.getBadgeText({ tabId: tab.id });
     const nextState = prevState === "ON" ? "OFF" : "ON";
@@ -28,7 +30,7 @@ chrome.action.onClicked.addListener(async (tab) => {
       await chrome.scripting
         .executeScript({
           target: { tabId: tab.id },
-          files: ["./src/module1.js","./src/index.js" ],
+          files: ["./src/APIs.js","./src/db.js", "./src/module1.js", "./src/index.js"],
         })
         .then(() => console.log("script injected"));
     } else if (nextState === "OFF") {
