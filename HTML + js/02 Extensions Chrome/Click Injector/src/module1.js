@@ -1,5 +1,2 @@
-function module(){
-  console.log("module")
-}
+console.log("./src/module1.js");
 
-module()
