@@ -1,5 +1,5 @@
 function facaContas(){
-  let numero = 3
+let numero = 3
   for(let i = 1; i<5;i++){
     let array = [7,3,5,2,3]
     if(array[i-1]>4){
