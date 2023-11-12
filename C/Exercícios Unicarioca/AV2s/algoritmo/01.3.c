@@ -9,5 +9,4 @@ main(){
   j=j+x;
  }while(j>0);
  printf("%d %d\n",x,j);
-  
 }
