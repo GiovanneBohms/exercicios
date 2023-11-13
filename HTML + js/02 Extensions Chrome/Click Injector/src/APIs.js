@@ -63,7 +63,7 @@ async function coletaIdParaBookEGraficoDeVolatididade(id, name) {
   }
 }
 
-async function dadosPrimarios(fim) {
+async function dadosPrimarioss(fim) {
   let inicio = fim - 100;
   try {
     let promessa = await fetch(
@@ -72,7 +72,25 @@ async function dadosPrimarios(fim) {
     let objetoDados = await promessa.json();
     return objetoDados
   } catch (error) {
-    console.log("erro de conexão em ColetaDadosItens");
+    console.log("erro de conexão em dadosPrimarios");
+    return null;
+  }
+}
+
+async function dadosPrimarios(fim) {
+  let inicio = fim - 100;
+  try {
+    let promessa = await fetch(
+      `https://steamcommunity.com/market/search/render/?query=&start=${inicio}&count=${fim}&search_descriptions=0&sort_column=popular&sort_dir=desc&norender=1`
+    );
+
+    // Adiciona logs para depuração
+    
+    let objetoDados = await promessa.json();
+    console.log('Dados da API:', objetoDados);
+    return objetoDados;
+  } catch (error) {
+    console.error("Erro de conexão em dadosPrimarios:", error);
     return null;
   }
 }
