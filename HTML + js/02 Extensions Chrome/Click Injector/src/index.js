@@ -5,6 +5,7 @@ const configuracao = {
   quantidadeParaPesquisar: 5000,
   ofertasMinimas: 5000,
   precoPrimario: 10.0,
+  cotacaoDolar: 4.91,
   //Config após coleta de API
   horas: 336,
   volume: 10000,
@@ -14,14 +15,21 @@ const configuracao = {
 
 async function coletaItens(intervalo) {
   let objetos = await dadosPrimarios(intervalo);
+
+  if (!objetos) {
+    console.log("houve erro em coletaItens");
+    return null;
+  }
   let itens = [];
   for (let i = 0; i < objetos.results.length; i++) {
     let item = {
-      precoDeVenda: objetos.results[i].sell_price,
+      precoDeVenda:
+        (objetos.results[i].sell_price / 100) * configuracao.cotacaoDolar,
       ofertasListadas: objetos.results[i].sell_listings,
       name: encodeURIComponent(objetos.results[i].hash_name),
       id: objetos.results[0].asset_description.appid,
       cotacao: [],
+      idBook: "",
     };
     if (item.ofertasListadas >= configuracao.ofertasMinimas) {
       itens.push(item);
@@ -32,16 +40,25 @@ async function coletaItens(intervalo) {
   return itens;
 }
 
-async function verificaCotacao() {
-  let itens = await coletaItens(100);
-  let contacaoFicticia = [
-    [1.49, 4517],
-    [1.49, 4147],
-    [1.48, 3507],
-  ];
+// coletaItens(200)
 
-  itens[0].cotacao = contacaoFicticia;
-  console.log(itens[0]);
-  console.log("olaaa");
+async function coletaIntervalos() {
+  let intervalo = configuracao.quantidadeParaPesquisar;
+  let todosOsItens = [];
+  let i = 0;
+  while (i < intervalo) {
+    let itensDoIntervalo = await coletaItens(i);
+    
+    if (!itensDoIntervalo) {
+      console.log(`houve null na iteração ${i}`);
+      await delay(1000 * 60 * 1);
+      continue;
+    }
+    todosOsItens = todosOsItens.concat(itensDoIntervalo);
+    console.log(todosOsItens);
+    console.log(i);
+    i = i + 100;
+  }
+  console.log(todosOsItens[101]);
 }
-verificaCotacao();
+coletaIntervalos();
