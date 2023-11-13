@@ -58,8 +58,11 @@ const velhoItem = {
   prices: [0.45, 0.56, 0.99, 0.63, 0.32],
 };
 
-adicionarItem(novoItem);
-adicionarItem(velhoItem);
+async function adicionaitens(){
+  adicionarItem(novoItem);
+  adicionarItem(velhoItem);
+}
+
 
 async function obterItens() {
   try {
@@ -90,4 +93,4 @@ async function printItens() {
   console.log(arrayItens[0].itemName);
 }
 
-printItens();
+// printItens();
