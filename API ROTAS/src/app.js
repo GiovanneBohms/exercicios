@@ -1,6 +1,6 @@
 import express from "express";
 import conectaNaDataBase from "./config/dbConnect.js";
-
+import livro from "./models/Livro.js"
 const conexao = await conectaNaDataBase();
 
 
