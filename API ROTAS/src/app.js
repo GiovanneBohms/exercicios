@@ -1,4 +1,16 @@
 import express from "express";
+import conectaNaDataBase from "./config/dbConnect.js";
+
+const conexao = await conectaNaDataBase();
+
+
+conexao.on("error",(erro)=>{
+    console.error("erro de conexão", erro)
+});
+
+conexao.once("open", ()=>{
+    console.log("conexão com o bando feito com sucesso");
+})
 
 const app=express();
 app.use(express.json());
@@ -52,3 +64,5 @@ app.delete("/livros/:id",(req,res)=>{
 })
 
 export default app;
+
+// mongodb+srv://LivrariaBohms:<password>@cluster0.sihpat0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
