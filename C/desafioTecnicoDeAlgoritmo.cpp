@@ -3,10 +3,10 @@
 int main()
 {
     
-    int inteiros[5] = {1,2,3,4,5}, pares[5], impares[5], contadorPar = 0, contadorImpar =0;
+    int inteiros[9] = {1,12,65,73,8,92,33,3,10}, pares[9], impares[9], contadorPar = 0, contadorImpar =0;
     
      // Identifica pares e impares
-    for(int i =0; i <5; i++){
+    for(int i =0; i <9; i++){
 
          if (inteiros[i] % 2 ==0){
             // printf("%d", inteiros[i]);
@@ -29,8 +29,6 @@ int main()
     for ( int i =0; i<contadorImpar; i++){
         printf(" %d", impares[i]);
     }
-    
-    
     
     
     return 0;
