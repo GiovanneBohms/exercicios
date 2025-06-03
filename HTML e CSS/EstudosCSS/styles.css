@@ -4,7 +4,7 @@
   padding: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  max-width: 650px;
+  max-width: 947px;
   font-family: Arial, sans-serif;
 }
 
@@ -28,6 +28,10 @@
 
 .card .positive {
   color: #27ae60;
+}
+
+.card .negative {
+  color: #E62927;
 }
 
 th{

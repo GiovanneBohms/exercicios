@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gênio das Operações</title>
+  <style>
+    /* Paleta base: azul */
+    :root {
+      --cor-primaria: #0d47a1;
+      --cor-secundaria: #1976d2;
+      --cor-destaque: #42a5f5;
+      --cor-texto: #ffffff;
+      --cor-fundo: #e3f2fd;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--cor-fundo);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      color: var(--cor-primaria);
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .botoes-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 200px;
+    }
+
+    button {
+      background-color: var(--cor-secundaria);
+      color: var(--cor-texto);
+      border: none;
+      padding: 1rem;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: var(--cor-destaque);
+    }
+
+    .creditos-container,
+    .configuracoes-container {
+      display: none;
+    }
+
+    footer {
+      margin-top: 3rem;
+      color: var(--cor-primaria);
+      font-size: 0.9rem;
+    }
+
+    /* Estilo adicional para o tema escolar */
+    .escola-fundo {
+      background: url('https://i.imgur.com/Z2dZzXN.jpg') no-repeat center center/cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.1;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <div class="escola-fundo"></div>
+  <h1>Gênio das Operações</h1>
+  <div class="botoes-container">
+    <button id="btn-jogar">Jogar</button>
+    <button id="btn-configuracoes">Configurações</button>
+    <button id="btn-creditos">Créditos</button>
+  </div>
+
+  <!-- Seções vazias para configurações e créditos -->
+  <div class="configuracoes-container">
+    <!-- Conteúdo futuro de configurações -->
+  </div>
+
+  <div class="creditos-container">
+    <!-- Conteúdo futuro de créditos -->
+  </div>
+
+  <footer>
+    © 2025 Gênio das Operações - Todos os direitos reservados.
+  </footer>
+</body>
+</html>
